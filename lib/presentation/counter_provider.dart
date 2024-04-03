@@ -9,31 +9,40 @@ class Counter_In_Provider extends StatelessWidget {
   Widget build(BuildContext context) {
     // ------------------------------------------------------
 
-    final countController = Provider.of<CounterController>(context,listen: false);
+    final countController =
+        Provider.of<CounterController>(context, listen: false);
 
     // ======================================================
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.blueAccent,),
+      appBar: AppBar(
+        backgroundColor: Colors.blueAccent,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            Center(child: Consumer<CounterController>(builder: (context,value,child){
-                return Text(value.getcount.toString(),style: const TextStyle(fontSize: 30),);
+            Center(child:
+                Consumer<CounterController>(builder: (context, value, child) {
+              return Text(
+                value.getcount.toString(),
+                style: const TextStyle(fontSize: 30),
+              );
             })),
-            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ElevatedButton(onPressed: (){
-                  countController.increment();
-                }, child: const Text("INCREMENT")),
-                ElevatedButton(onPressed: (){countController.decrement();}, child: const Text("DECREMENT")),
-        
+                ElevatedButton(
+                    onPressed: () {
+                      countController.increment();
+                    },
+                    child: const Text("INCREMENT")),
+                ElevatedButton(
+                    onPressed: () {
+                      countController.decrement();
+                    },
+                    child: const Text("DECREMENT")),
               ],
             ),
-
-       
           ],
         ),
       ),
