@@ -7,12 +7,6 @@ class SliderInFlutter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ------------------------------------------------------
-
-    final sliderController =
-        Provider.of<SliderController>(context, listen: false);
-
-    // ======================================================
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.amber,
