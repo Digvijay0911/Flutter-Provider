@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_state_management/controller/counter_controller.dart';
 import 'package:provider_state_management/controller/slider_controller.dart';
-import 'package:provider_state_management/presentation/slider_provider.dart';
+import 'package:provider_state_management/controller/textfield_controller.dart';
+import 'package:provider_state_management/presentation/textfield_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +17,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (context)=>CounterController()),
       ChangeNotifierProvider(create: (context)=>SliderController()),
+      ChangeNotifierProvider(create: (context)=>TextfieldController()),
+
     ],
     child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const SliderInFlutter(),
+        home: const TextFieldProvider(),
       ),);
     // =====================================================================
   }
